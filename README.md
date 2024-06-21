@@ -273,9 +273,7 @@ This DApp consists of a simple contract written in Solidity and a frontend appli
                   try {
                       const accounts = await window.web3.eth.getAccounts();
                       const contract = new window.web3.eth.Contract(contractABI, contractAddress);
-                      await contract
-
-.methods.reset().send({ from: accounts[0] });
+                      await contract.methods.reset().send({ from: accounts[0] });
                       console.log('Data reset successfully.');
                   } catch (error) {
                       console.error(error);
